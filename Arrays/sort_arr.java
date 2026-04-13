@@ -1,4 +1,4 @@
-package Arrays;
+
 
 import java.util.Scanner;
 
@@ -8,6 +8,9 @@ class sort_arr {
         int temp = 0;
         for (int i = 0; i < arr.length; i++) {
             for (int j = 0; j < arr.length - 1; j++) {
+                //j<arr.length-1 {because we compare
+                // arr[j] with arr[j+1], so to avoid accessing
+                // invalid index, we limit to length-1}
                 if (arr[j] > arr[j + 1]) {
                     temp = arr[j];
                     arr[j] = arr[j + 1];
@@ -42,3 +45,38 @@ class sort_arr {
         sc.close();
     }
 }
+/*import java.util.Scanner;
+class sort_arr{
+    static int[] bubble_sort(int[]arr){
+        int temp=0;
+        for(int i=0;i<arr.length;i++){
+            for(j=0;j<arr.length-1;j++){
+                if(arr[j]>arr[j+1]){
+                    temp=arr[j];
+                    arr[j]=arr[j+1];
+                    arr[j+1]=temp;
+                }
+            }
+        }
+            return arr;
+    }
+
+
+public static void main(String[]args){
+    Scanner sc=new Scanner(System.in);
+    System.out.println("enter how many elements:");
+    int n=sc.nextInt();
+
+    int[]arr=new int[n];
+    System.out.print("enter elements:");
+    for(int i=0;i<n;i++){
+        arr[i]=sc.nextInt();
+    }
+
+    int[] sorted=bubble_sort(arr);
+    for(int i=0;i<n;i++){
+        System.out.print(sorted[i]+"");
+    }
+}
+}
+*/ 
